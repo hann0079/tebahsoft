@@ -20,10 +20,10 @@ function App() {
 
   async function getCC(videoId) {
     const response = await fetch("/main/youtube_script/", {
-      method: "POST", //default는 GET이기 때문에 POST로 따로 설정해줘야함
+      method: "POST",
       body: JSON.stringify({
         video_id: videoId,
-      }), //array, list -> JSON format
+      }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -63,7 +63,7 @@ function App() {
           <YouTube videoId={videoId} opts={opts} />
         </div>
         <div className="text-box">
-          <p>{ccs.map((item) => item.text).join(" ")}</p>
+          <p>{ccs.map((cc) => cc.text).join(" ")}</p>
         </div>
       </div>
     </div>

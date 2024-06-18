@@ -25,5 +25,5 @@ form {
 .text-box {
   border: 1px solid #ccc;
   padding: 10px;
-  overflow-y: auto; /* Enables vertical scrolling */
+  overflow-y: auto;
 }
