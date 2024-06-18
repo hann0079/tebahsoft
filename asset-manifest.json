@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/tebahsoft/static/css/main.b8afcd59.css",
-    "main.js": "/tebahsoft/static/js/main.6914ccee.js",
+    "main.css": "/tebahsoft/static/css/main.51e427c8.css",
+    "main.js": "/tebahsoft/static/js/main.2cc8f8a7.js",
     "index.html": "/tebahsoft/index.html",
-    "main.b8afcd59.css.map": "/tebahsoft/static/css/main.b8afcd59.css.map",
-    "main.6914ccee.js.map": "/tebahsoft/static/js/main.6914ccee.js.map"
+    "main.51e427c8.css.map": "/tebahsoft/static/css/main.51e427c8.css.map",
+    "main.2cc8f8a7.js.map": "/tebahsoft/static/js/main.2cc8f8a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8afcd59.css",
-    "static/js/main.6914ccee.js"
+    "static/css/main.51e427c8.css",
+    "static/js/main.2cc8f8a7.js"
   ]
 }
