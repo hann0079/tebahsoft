@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tebahsoft/static/css/main.b8afcd59.css",
+    "main.js": "/tebahsoft/static/js/main.6914ccee.js",
+    "index.html": "/tebahsoft/index.html",
+    "main.b8afcd59.css.map": "/tebahsoft/static/css/main.b8afcd59.css.map",
+    "main.6914ccee.js.map": "/tebahsoft/static/js/main.6914ccee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8afcd59.css",
+    "static/js/main.6914ccee.js"
+  ]
+}
