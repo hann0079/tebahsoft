@@ -1,0 +1,54 @@
+.hashWrap {
+  display: flex;
+  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  min-height: 40px;
+}
+
+.label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.hashInput {
+  padding: 5px;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  min-width: 100px;
+}
+
+.tagList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tagItem {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+}
+
+.tagItem span {
+  margin-right: 5px;
+}
+
+.tagItem button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
