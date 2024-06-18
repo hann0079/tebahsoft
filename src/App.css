@@ -4,26 +4,3 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-
-form {
-  margin-bottom: 20px;
-}
-
-.video-and-text {
-  display: flex;
-  width: 100%;
-}
-
-.video-container,
-.text-box {
-  width: 100%;
-  max-width: 640px;
-  height: 360px;
-  margin: 10px;
-}
-
-.text-box {
-  border: 1px solid #ccc;
-  padding: 10px;
-  overflow-y: auto;
-}

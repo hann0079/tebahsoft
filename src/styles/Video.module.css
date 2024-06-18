@@ -1,0 +1,29 @@
+form {
+  margin-bottom: 20px;
+}
+
+.video_text {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.video,
+.text {
+  flex: 1 1 45%;
+  max-width: 640px;
+  height: auto;
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.text {
+  border: 1px solid gray;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
