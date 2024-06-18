@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import useState from "react";
 import "./App.css";
 import YouTube from "react-youtube";
 
@@ -15,10 +15,10 @@ function App() {
     event.preventDefault();
     const id = extractVideoId(url);
     setVideoId(id);
-    getCC(id);
+    getCc(id);
   };
 
-  async function getCC(videoId) {
+  async function getCc(videoId) {
     const response = await fetch("/main/youtube_script/", {
       method: "POST",
       body: JSON.stringify({
