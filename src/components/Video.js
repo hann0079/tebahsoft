@@ -2,10 +2,10 @@ import { useState } from "react";
 import styles from "../styles/Video.module.css";
 import YouTube from "react-youtube";
 
-function Video({}) {
+function Video() {
   const [url, setUrl] = useState("");
   const [videoId, setVideoId] = useState("");
-  const [ccs, setCcs] = useState(["자막"]);
+  const [ccs, setCcs] = useState([]);
 
   const onChange = (event) => {
     setUrl(event.target.value);
@@ -63,7 +63,11 @@ function Video({}) {
           <YouTube videoId={videoId} opts={opts} />
         </div>
         <div className={styles.text}>
-          <p>{ccs.map((cc) => cc.text).join(" ")}</p>
+          {ccs.length === 0 ? (
+            <p>자막</p>
+          ) : (
+            <p>{ccs.map((cc) => cc.text).join(" ")}</p>
+          )}
         </div>
       </div>
     </div>
