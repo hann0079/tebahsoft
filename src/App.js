@@ -1,23 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import YouTube from "react-youtube";
 
 function App() {
+  const [url, setUrl] = useState("");
+  const [videoId, setVideoId] = useState("");
+  const [ccs, setCcs] = useState([]);
+
+  const onChange = (event) => {
+    setUrl(event.target.value);
+  };
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const id = extractVideoId(url);
+    setVideoId(id);
+    getCC(id);
+  };
+
+  async function getCC(videoId) {
+    const response = await fetch("/main/youtube_script/", {
+      method: "POST", //default는 GET이기 때문에 POST로 따로 설정해줘야함
+      body: JSON.stringify({
+        video_id: videoId,
+      }), //array, list -> JSON format
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    setCcs(data.transcript);
+  }
+
+  const extractVideoId = (url) => {
+    const urlPattern = "https://www.youtube.com/watch?v=";
+    let videoId = "";
+    if (url.startsWith(urlPattern)) {
+      videoId = url.substring(urlPattern.length);
+    }
+    return videoId;
+  };
+
+  const opts = {
+    playerVars: {
+      autoplay: 0,
+    },
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          value={url}
+          placeholder="Youtube 주소를 넣으세요."
+          onChange={onChange}
+        />
+        <button type="submit">Load</button>
+      </form>
+      <div className="video-and-text">
+        <div className="video-container">
+          <YouTube videoId={videoId} opts={opts} />
+        </div>
+        <div className="text-box">
+          <p>{ccs.map((item) => item.text).join(" ")}</p>
+        </div>
+      </div>
     </div>
   );
 }
